@@ -38,21 +38,29 @@ app.get('/', checkAuth, (req, res) => {
     });
 });
 
-app.get('/login', (req, res) => {
-    const nonce = generators.nonce();
-    const state = generators.state();
-
-    req.session.nonce = nonce;
-    req.session.state = state;
-
-    const authUrl = client.authorizationUrl({
-        scope: 'email openid phone',
-        state: state,
-        nonce: nonce,
-    });
-
-    res.redirect(authUrl);
-});
+app.post('/login', async (req, res) => {
+    const { email, password } = req.body;  // Get email and password from the form
+    
+    // Here, you would authenticate with AWS Cognito (using AWS SDK or OIDC API)
+    // For example: (Assume you have an AWS Cognito service to validate user credentials)
+    try {
+      // Authentication process: replace this with actual Cognito authentication
+      const tokenSet = await client.grant({
+        grant_type: 'password',
+        username: email,  // Use email as username in Cognito
+        password: password,  // Use password from form
+      });
+  
+      // Store token in session or cookies
+      req.session.token = tokenSet.id_token;  // Store the JWT token in the session
+  
+      // Redirect user to the dashboard or home page after successful login
+      res.redirect('/home');  // Redirecting to a protected route after login
+    } catch (error) {
+      console.error('Authentication failed:', error);
+      res.status(401).send('Login failed! Please check your credentials.');
+    }
+  });
 
 // Helper function to get the path from the URL. Example: "http://localhost/hello" returns "/hello"
 function getPathFromURL(urlString) {
