@@ -1,0 +1,71 @@
+/* dashboard.css */
+
+/* Apply Poppins font across the entire page */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f6f9;
+}
+
+.dashboard-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    padding: 20px;
+    box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+.card-title {
+    font-size: 1.75rem;
+    color: #4e73df;
+    font-weight: 600;
+}
+
+.card-body p {
+    color: #777;
+    font-size: 1.1rem;
+}
+
+.btn {
+    display: inline-block;
+    width: 100%;
+    padding: 12px;
+    font-weight: 500;
+    text-align: center;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+.btn-primary {
+    background-color: #4e73df;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #2e59d9;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+.mt-3 {
+    margin-top: 1rem;
+}

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Recommendation Form - Pathfinder</title>
+    <link rel="stylesheet" href="career-form.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEJxv+eJ+M+M+Kru/8AyA5ANbZ46rD3U9frjHkLsWda2b0L1ybaN7mT4E8kpu" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="career-pathways-container">
+        <h3 class="text-center mb-4">Career Recommendation Form</h3>
+        <p class="text-center mb-4">Fill out the form below to receive personalized career recommendations based on your academic performance and interests.</p>
+
+        <!-- Career Recommendation Form -->
+        <form class="career-form">
+            <!-- Academic Performance Section -->
+            <div class="form-section">
+                <h5 class="section-title">Academic Performance</h5>
+                <div class="form-group">
+                    <label for="grade" class="form-label">Current Grade</label>
+                    <select class="form-control" id="grade" required onchange="updateStreamOptions()">
+                        <option value="">Select Grade</option>
+                        <option value="10">10th Grade</option>
+                        <option value="12">12th Grade</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="stream" class="form-label">Select Stream</label>
+                    <select class="form-control" id="stream" required onchange="updateSubjectFields()">
+                        <option value="">Select Stream</option>
+                        <option value="science">Science</option>
+                        <option value="commerce">Commerce</option>
+                        <option value="arts">Arts</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="overall-percentage" class="form-label">Overall Percentage</label>
+                    <input type="number" class="form-control" id="overall-percentage" placeholder="Enter your overall percentage" required>
+                </div>
+            </div>
+
+            <!-- Subject-wise Marks Section -->
+            <div class="form-section" id="subject-fields">
+                <h5 class="section-title">Subject-wise Marks</h5>
+                <!-- Dynamic fields will be inserted here based on the selected stream -->
+            </div>
+
+            <!-- Personal Interests Section -->
+            <div class="form-section">
+                <h5 class="section-title">Personal Interests</h5>
+                <div class="form-group">
+                    <label class="form-label">Select your interests (Select all that apply)</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="interest-tech" value="Technology">
+                        <label class="form-check-label" for="interest-tech">Technology</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="interest-science" value="Science">
+                        <label class="form-check-label" for="interest-science">Science</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="interest-arts" value="Arts">
+                        <label class="form-check-label" for="interest-arts">Arts</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="interest-business" value="Business">
+                        <label class="form-check-label" for="interest-business">Business</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="interest-healthcare" value="Healthcare">
+                        <label class="form-check-label" for="interest-healthcare">Healthcare</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary btn-rounded w-50">Get Recommendations</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Function to update subject fields based on the selected stream
+        function updateSubjectFields() {
+            const stream = document.getElementById("stream").value;
+            const subjectFields = document.getElementById("subject-fields");
+            let fieldsHTML = "";
+
+            if (stream === "science") {
+                fieldsHTML = `
+                    <div class="form-group">
+                        <label for="maths" class="form-label">Mathematics</label>
+                        <input type="number" class="form-control" id="maths" placeholder="Enter marks in Mathematics" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="physics" class="form-label">Physics</label>
+                        <input type="number" class="form-control" id="physics" placeholder="Enter marks in Physics" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="chemistry" class="form-label">Chemistry</label>
+                        <input type="number" class="form-control" id="chemistry" placeholder="Enter marks in Chemistry" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="biology" class="form-label">Biology/Computer Science</label>
+                        <input type="number" class="form-control" id="biology" placeholder="Enter marks in Biology/Computer Science" required>
+                    </div>
+                `;
+            } else if (stream === "commerce") {
+                fieldsHTML = `
+                    <div class="form-group">
+                        <label for="accountancy" class="form-label">Accountancy</label>
+                        <input type="number" class="form-control" id="accountancy" placeholder="Enter marks in Accountancy" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="business-studies" class="form-label">Business Studies</label>
+                        <input type="number" class="form-control" id="business-studies" placeholder="Enter marks in Business Studies" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="economics" class="form-label">Economics</label>
+                        <input type="number" class="form-control" id="economics" placeholder="Enter marks in Economics" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="maths-commerce" class="form-label">Mathematics/Informatics Practices</label>
+                        <input type="number" class="form-control" id="maths-commerce" placeholder="Enter marks in Mathematics/Informatics Practices" required>
+                    </div>
+                `;
+            } else if (stream === "arts") {
+                fieldsHTML = `
+                    <div class="form-group">
+                        <label for="history" class="form-label">History</label>
+                        <input type="number" class="form-control" id="history" placeholder="Enter marks in History" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="political-science" class="form-label">Political Science</label>
+                        <input type="number" class="form-control" id="political-science" placeholder="Enter marks in Political Science" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="geography" class="form-label">Geography</label>
+                        <input type="number" class="form-control" id="geography" placeholder="Enter marks in Geography" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="sociology" class="form-label">Sociology</label>
+                        <input type="number" class="form-control" id="sociology" placeholder="Enter marks in Sociology" required>
+                    </div>
+                `;
+            }
+
+            subjectFields.innerHTML = `<h5 class="section-title">Subject-wise Marks</h5>${fieldsHTML}`;
+        }
+    </script>
+</body>
+</html>

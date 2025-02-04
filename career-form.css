@@ -1,0 +1,102 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f6f9;
+    color: #333;
+}
+
+.career-pathways-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+/* Form Sections */
+.form-section {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 1.25rem;
+    color: #4e73df;
+    font-weight: 600;
+    margin-bottom: 15px;
+    margin-top: 8px;
+}
+
+/* Form Groups */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-label {
+    display: block;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: #333;
+    box-sizing: border-box;
+}
+
+.form-control:focus {
+    border-color: #4e73df;
+    outline: none;
+    box-shadow: 0 0 5px rgba(78, 115, 223, 0.5);
+}
+
+/* Checkbox Styles */
+.form-check {
+    margin-bottom: 10px;
+}
+
+.form-check-input {
+    margin-right: 10px;
+}
+
+.form-check-label {
+    font-weight: 400;
+    color: #555;
+}
+
+/* Button Styles */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    text-align: center;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1.02rem;
+}
+
+.btn-primary {
+    background-color: #4e73df;
+    color: white;
+}
+
+
+.btn-primary:hover {
+    background-color: #2e59d9;
+}
+
+.text-center {
+    text-align: center;
+    margin-top: 20px;
+}

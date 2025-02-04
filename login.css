@@ -1,0 +1,54 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f6f9;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+    padding: 30px;
+    padding-top: 1px;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    color: #4e73df;
+    font-weight: 600;
+    text-align: center;
+}
+
+.form-label {
+    font-weight: 500;
+}
+
+.btn-primary {
+    background-color: #4e73df;
+    border-color: #4e73df;
+    display: block;  /* Ensures the button behaves as a block-level element */
+    width: 100%;  /* Takes full width of the container */
+    border-radius: 10px;
+}
+
+.btn-primary:hover {
+    background-color: #2e59d9;
+    border-color: #2e59d9;
+}
+
+.form-control {
+    border-radius: 10px;
+}
+
+.form-control:last-of-type {
+    margin-bottom: 15px;  /* Adjust space as needed */
+}
+
