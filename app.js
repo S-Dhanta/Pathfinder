@@ -12,6 +12,6 @@ app.get('/', (req, res) => {
 app.use(express.static(__dirname));
 
 // Start the server
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-});
+// app.listen(port, () => {
+//   console.log(`Server running on port ${port}`);
+// });
