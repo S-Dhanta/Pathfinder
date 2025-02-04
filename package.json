@@ -2,7 +2,7 @@
   "name": "pathfinder-app-prototype01",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
   "start": "node app.js",
   "build": "node app.js",
